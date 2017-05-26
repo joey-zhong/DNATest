@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.scene.image.*;
 	
 public class Driver extends Application {
 	
@@ -26,14 +27,27 @@ public class Driver extends Application {
 	
 	private Parent createContent() {
 		root = new Pane();
-		root.setPrefSize(1100, 600);
-		//player = ;
+		Canvas canvas = new Canvas(1100, 600);
+		root.getChildren().add(canvas);
 		
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+		Image ninja = new Image("ninja.png");
+		Image sword = new Image("ninja.png");
+		Image shuriken = new Image("shuriken.png");
+		
+		long currentNanoTime = System.nanoTime();
 		AnimationTimer timer = new AnimationTimer(){
 			@Override
-			public void handle(long now) {
-			// TODO Auto-generated method stub
-				onUpdate();
+			public void handle(long startNanoTime) {
+		            double t = (currentNanoTime - startNanoTime) / 1000000000.0; 
+		 
+		            double x = 232 + 128 * Math.cos(t);
+		            double y = 232 + 128 * Math.sin(t);
+		 
+		            // background image clears canvas
+		            gc.clearRect(0, 0, 1100, 600);
+		            gc.drawImage(shuriken, x, y);
+		            
 			}
 		};
 		

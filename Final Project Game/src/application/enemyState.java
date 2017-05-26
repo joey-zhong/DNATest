@@ -1,4 +1,4 @@
-package main;
+package application;
 
 public enum enemyState {
 resting, sliding, jumping

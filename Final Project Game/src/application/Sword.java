@@ -1,4 +1,4 @@
-package main;
+package application;
 
 import javafx.scene.Node;
 import javafx.scene.image.Image;

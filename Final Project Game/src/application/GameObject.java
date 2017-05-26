@@ -1,4 +1,4 @@
-package main;
+package application;
 
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
