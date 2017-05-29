@@ -10,6 +10,6 @@ public class Projectile extends GameObject{
 		// TODO Auto-generated constructor stub
 	}
 	private int x, y, velX, velY;
-	private Image sprite = new Image("Shuriken.jpg");
+	private Image sprite = new Image("shuriken.jpg");
 	
 }
